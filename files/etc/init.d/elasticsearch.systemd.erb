@@ -34,12 +34,13 @@ LimitNPROC=<%= @resource[:nproc] %>
 # Specifies the maximum number of bytes of memory that may be locked into RAM
 # Set to "infinity" if you use the 'bootstrap.memory_lock: true' option
 # in elasticsearch.yml and 'MAX_LOCKED_MEMORY=unlimited' in ${path.env}
-#LimitMEMLOCK=infinity
-<% if @resource[:memlock] == 'unlimited' %>
 LimitMEMLOCK=infinity
-<% elsif @resource[:memlock] %>
-LimitMEMLOCK=<%= @resource[:memlock] %>
-<% end %>
+
+#<% if @resource[:memlock] == 'unlimited' %>
+#LimitMEMLOCK=infinity
+#<% elsif @resource[:memlock] %>
+#LimitMEMLOCK=<%= @resource[:memlock] %>
+#<% end %>
 
 # Disable timeout logic and wait until process is stopped
 TimeoutStopSec=0
